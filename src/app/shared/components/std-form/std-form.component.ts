@@ -33,6 +33,8 @@ export class StdFormComponent implements OnInit {
       console.log(newStdObj);
 
      this._stdService.onCreateStd(newStdObj);
+
+     this.stdForm.reset()
      
      
     }
