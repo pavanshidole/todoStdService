@@ -69,7 +69,7 @@
                     in contact input contorl we shouldn enter digit number with maxmimum 10 number !!
                 </strong>
             </div>
-            <button type="submit" class="btn btn-sm btn-block btn-outline-primary">Add student</button>
+            <button [disabled]="stdForm.invalid" type="submit" class="btn btn-sm btn-block btn-outline-primary">Add student</button>
         </form>
     </div>
 </div>

@@ -20,7 +20,7 @@
                 </strong>
 
             </div>
-            <button type="submit" class="btn btn-sm btn-block btn-outline-success">Add Todo</button>
+            <button [disabled]="todoForm.invalid" type="submit" class="btn btn-sm btn-block btn-outline-success">Add Todo</button>
         </form>
     </div>
 </div>
