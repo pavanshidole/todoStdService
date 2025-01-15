@@ -1,1 +1,26 @@
-<p>todo-form works!</p>
+
+
+<div class="card bg-dark text-white text-center ">
+    <div class="card-body">
+        <form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="todoItem">todoItem</label>
+                <input type="text" ngModel pattern="[a-zA-Z]+" required name="todoItem" id="todoItem" #todoItem="ngModel" class="form-control">
+
+                <strong 
+                *ngIf="todoItem.touched && todoItem.hasError('required')"
+                class="text-danger">
+                    todoItem is required field error !!!
+                </strong>
+
+                <strong 
+                *ngIf="todoItem.dirty && todoItem.hasError('pattern')"
+                class="text-danger">
+                    in todoItem  input controld user shouldn't not be enter digit or special character !!!
+                </strong>
+
+            </div>
+            <button type="submit" class="btn btn-sm btn-block btn-outline-success">Add Todo</button>
+        </form>
+    </div>
+</div>

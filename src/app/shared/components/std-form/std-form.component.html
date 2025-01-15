@@ -1,0 +1,75 @@
+
+<div class="card bg-dark text-white">
+    <div class="card-body">
+        <form #stdForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="fname">fname*</label>
+                <input type="text" pattern="[a-zA-Z]+" name="fname"  ngModel required #fname="ngModel" class="form-control" id="fname">
+
+                <strong 
+                *ngIf="fname.touched && fname.hasError('required')"
+                class="text-danger">
+                    fname is required field error !!!
+                </strong>
+
+                <strong 
+                *ngIf="fname.dirty && fname.hasError('pattern')"
+                class="text-danger">
+                    in fname input contorl we shouldn't enter digit number and special character !!
+                </strong>
+
+            </div>
+
+            <div class="form-group">
+                <label for="lname">lname*</label>
+                <input type="text" name="lname" pattern="[a-zA-Z]+"  ngModel required #lname="ngModel" class="form-control" id="lname">
+
+                <strong 
+                *ngIf="lname.touched && lname.hasError('required')"
+                class="text-danger">
+                    lname is required field error !!!
+                </strong>
+
+                <strong 
+                *ngIf="lname.dirty && lname.hasError('pattern')"
+                class="text-danger">
+                    in lname input contorl we shouldn't enter digit number and special character !!
+                </strong>
+            </div>
+
+            <div class="form-group">
+                <label for="email">email*</label>
+                <input type="text" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,}"  ngModel required #email="ngModel" class="form-control" id="email">
+
+                <strong 
+                *ngIf="email.touched && email.hasError('required')"
+                class="text-danger">
+                    email is required field error !!!
+                </strong>
+
+                <strong 
+                *ngIf="email.dirty && email.hasError('pattern')"
+                class="text-danger">
+                    in email user  should enter ex ({{'abc@gmail.com'}})
+                </strong>
+            </div>
+            <div class="form-group">
+                <label for="contact">contact*</label>
+                <input type="text" name="contact" pattern="[0-9]{10}"  ngModel required #contact="ngModel" class="form-control" id="contact">
+
+                <strong 
+                *ngIf="contact.touched && contact.hasError('required')"
+                class="text-danger">
+                    contact is required field error !!!
+                </strong>
+
+                <strong 
+                *ngIf="contact.dirty && contact.hasError('pattern')"
+                class="text-danger">
+                    in contact input contorl we shouldn enter digit number with maxmimum 10 number !!
+                </strong>
+            </div>
+            <button type="submit" class="btn btn-sm btn-block btn-outline-primary">Add student</button>
+        </form>
+    </div>
+</div>

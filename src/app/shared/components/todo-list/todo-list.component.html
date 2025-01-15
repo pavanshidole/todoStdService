@@ -1,1 +1,20 @@
-<p>todo-list works!</p>
+
+
+<ul 
+*ngIf="todoArr.length > 0; else noTodo"
+class="list-group">
+    <li 
+    *ngFor="let todo of todoArr"
+    class="list-group-item bg-dark text-white text-capitalize d-flex justify-content-between">
+     {{todo.todoItem}}
+
+     <div>
+        <button mat-raised-button color="primary" class="mr-3">Edit</button>
+        <button (click)="onRemove(todo)" mat-raised-button color="warn">Remove</button>
+     </div>
+    </li>
+</ul>
+
+<ng-template #noTodo>
+    <p class="alert alert-danger">in todolist todoitem is not available!!!</p>
+</ng-template>
